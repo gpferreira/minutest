@@ -1,0 +1,41 @@
+.md-button{
+    text-transform: none;
+}
+md-input-container.md-default-theme label, md-input-container.md-default-theme .md-placeholder{
+    color:#9E9E9E;
+    font-weight:bold;
+}
+md-input-container.md-default-theme.md-input-invalid .md-input{
+    border-color:grey;
+}
+md-input-container.md-default-theme .md-input {
+    border-color:#E0E0E0;
+}
+.md-input-focused {
+    border-color:black;
+    color:black;
+}
+[layout="column"] > [fill] {
+    width: 100%;
+}
+[layout="row"] > [fill] {
+    width: 100%;
+}
+md-input-group input{
+  width:100%;
+  font-size: 1.2em;
+}
+md-input-group label{
+    color:#781649 !important;
+}
+.md-button{
+    min-width:0;
+    margin:0 !important;
+    font-size:1em;
+}
+md-icon{
+    font-size:0 !important;
+}
+.md-fab{
+    font-size:0 !important;
+}

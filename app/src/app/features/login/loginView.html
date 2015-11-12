@@ -1,0 +1,73 @@
+<div layout="row" fill flex layout-align="center center">
+
+    <div class="bg-white md-whiteframe-z1 p-32" flex-sm="90" flex-md="80" flex-lg="50" flex-gt-lg="40"
+         layout="row" layout-align="start start" id="login" layout-wrap>
+
+        <md-content layout-padding flex class="scrollable">
+            <h2 class="md-title">Informe seus dados</h2>
+
+            <div layout layout-sm="column">
+                <md-input-container flex>
+                    <label>E-mail</label>
+                    <input ng-model="user.email" type="text" required>
+                </md-input-container>
+            </div>
+
+            <div layout layout-sm="column">
+                <md-input-container flex>
+                    <label>Senha</label>
+                    <input ng-model="user.password" type="password" ng-enter="logon()" required>
+                </md-input-container>
+            </div>
+
+            <div fill layout="row" layout-align="end center">
+                <md-input-container flex>
+                    <md-button class="md-fab fixed bg-green md-fab-bottom-right" aria-label="Salvar dados" ng-click="logon()">
+                        <md-icon class="size-24 color-white" md-svg-src="assets/images/icons/done.svg">
+                    </md-button>
+                </md-input-container>
+            </div>
+
+            <div layout layout-sm="column">
+                E-mail: minutrade@minutrade.com
+            </div>
+            <div layout layout-sm="column">
+                Senha: minutrade
+            </div>
+
+        </md-content>
+
+        <!--<div fill layout="row" layout-align="center center" ng-if="mode=='client'" class="s-130 bold">
+            Acesse sua conta
+        </div>
+        <div fill layout="row" layout-align="center center" ng-if="mode=='admin'" class="s-130 bold">
+            Administrativo
+        </div>
+
+        <div fill layout="row" layout-align="start center" class="m-v-32">
+
+            <div class="w-128"> 
+                <img src="assets/images/logo.png"/>
+            </div>
+
+            <div class="m-l-32" layout="column" layout-align="start start" flex>
+
+                <div fill layout="row" layout-align="center center">
+                    <md-input-container class="fill-horizontal">
+                        <label>E-mail</label>
+                        <input type="text" ng-enter="checkLogin()" ng-model="formData.email" required />
+                    </md-input-container>
+                </div>
+
+                <div fill layout="row" layout-align="center center">
+                    <md-input-container class="fill-horizontal">
+                        <label>Senha</label>
+                        <input type="text" ng-enter="checkLogin()" ng-model="formData.password" required />
+                    </md-input-container>
+                </div>
+
+            </div>
+        </div>-->
+
+    </div>
+</div>

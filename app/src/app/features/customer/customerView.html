@@ -1,0 +1,99 @@
+<md-toolbar md-scroll-shrink>
+    <div class="md-toolbar-tools">
+        <h3>
+            <span>Customer Maintenance</span>
+        </h3>
+        <span flex></span>
+        <md-button class="md-raised md-warn" flex="10" ng-click="login()" ng-if="mode=='new'">Login</md-button>
+        <md-button class="md-raised md-warn" flex="10" ng-click="remove($event)" ng-if="mode=='edit'">Excluir</md-button>
+    </div>
+</md-toolbar>
+
+<div layout="row" fill flex layout-align="center center">
+
+    <div class="bg-white md-whiteframe-z1 p-32" flex-sm="90" flex-md="80" flex-lg="70" flex-gt-lg="60" layout="row"
+         layout-align="start start" id="customer" layout-wrap>
+
+        <md-content layout-padding flex class="scrollable">
+
+            <div layout layout-sm="column">
+                <md-input-container flex>
+                    <label>Nome</label>
+                    <input ng-model="customer.name" type="text">
+                </md-input-container>
+            </div>
+
+            <div layout layout-sm="column">
+                <md-input-container flex>
+                    <label>E-mail</label>
+                    <input ng-model="customer.email" type="email">
+                </md-input-container>
+            </div>
+
+            <div layout layout-sm="column">
+                <md-input-container flex>
+                    <label>CPF</label>
+                    <input ng-model="customer.cpf" type="text" id="cpf" cpf-mask>
+                </md-input-container>
+
+                <md-input-container flex>
+                    <label>Estado Civíl</label>
+                    <md-select ng-model="customer.marital_status">
+                        <md-option ng-repeat="status in marital_status" value="{{status.description}}">
+                            {{status.description}}
+                        </md-option>
+                    </md-select>
+                </md-input-container>
+            </div>
+
+            <div layout layout-sm="column">
+                <md-input-container flex>
+                    <label>Rua</label>
+                    <input ng-model="customer.address.street" type="text">
+                </md-input-container>
+            </div>
+
+            <div layout layout-sm="column">
+                <md-input-container flex>
+                    <label>Número</label>
+                    <input ng-model="customer.address.number" type="text">
+                </md-input-container>
+
+                <md-input-container flex>
+                    <label>Bairro</label>
+                    <input ng-model="customer.address.neighborhood" type="text">
+                </md-input-container>
+            </div>
+
+            <div layout layout-sm="column">
+                <md-input-container flex>
+                    <label>Cidade</label>
+                    <input ng-model="customer.address.city" type="text">
+                </md-input-container>
+            </div>
+
+            <div layout layout-sm="column">
+                <div data-ng-repeat="phone in customer.phone_numbers">
+
+                    <md-input-container>
+                        <md-icon md-svg-src="assets/images/icons/clear.svg" class="size-24" aria-label="Remover" ng-click="removeNumber()" ng-show="$last"></md-icon>
+                        <input ng-model="phone.number" type="text" placeholder="Telefone">
+                    </md-input-container>
+
+                </div>
+            </div>
+
+            <md-button class="md-raised" ng-click="addNewNumber()">Telefone</md-button>
+
+            <div fill layout="row" layout-align="end center">
+                <md-input-container flex>
+                    <md-button class="md-fab fixed bg-green md-fab-bottom-right" aria-label="Salvar dados" ng-click="save()">
+                        <md-icon class="size-24 color-white" md-svg-src="assets/images/icons/done.svg">
+                    </md-button>
+                </md-input-container>
+            </div>
+
+        </md-content>
+
+    </div>
+</div>
